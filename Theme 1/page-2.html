@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Cobus Botha">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content="5; URL=page-3.html" />
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+        <title></title>
+    </head>
+    <body id="page-2">
+      <img id="spiral" src="images/spiral.png">
+      <script>
+        let rotation = 0;
+        let scale = 50;
+        let startTime = null;
+
+        function easeOutCubic(t) {
+          return (--t)*t*t+1;
+        }
+
+        function rotateSpiral(timestamp) {
+          if (!startTime) startTime = timestamp;
+          const progress = Math.min((timestamp - startTime) / 5000, 1);
+          scale = 40 - easeOutCubic(progress) * 39;
+          rotation = (rotation + 1) % 360;
+          const spiral = document.getElementById('spiral');
+          spiral.style.transform = `scale(${scale}) rotate(${rotation}deg)`;
+          if (progress < 1) requestAnimationFrame(rotateSpiral);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+          requestAnimationFrame(rotateSpiral);
+        });
+      </script>
+    </body>
+    <footer>
+</html>

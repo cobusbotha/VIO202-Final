@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Cobus Botha">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+        <title></title>
+    </head>
+    <body id="page-5">
+      <div id="healthBarContainer">
+        <div id="healthBar"></div>
+      </div> 
+        <img id="eyes" src="images/eyes.png">
+        <img id="cave" src="images/Cave.png">
+        <img id="attack" src="images/Wand-attack.png">
+        <img id="blast" src="images/blast.png">
+        <img id="explosion" src="images/explosion.png">
+      <audio id="magicSound" src="audio/magic.mp3" preload="auto"></audio>
+      <audio id="blastSound" src="audio/magic-blast.mp3" preload="auto"></audio>
+      <script>
+        var health = 100;
+        var healthBar = document.getElementById('healthBar');
+        var healthBarContainer = document.getElementById('healthBarContainer');
+        var eyes = document.getElementById('eyes');
+        var attack = document.getElementById('attack');
+        var blast = document.getElementById('blast');
+        var blastSound = document.getElementById('blastSound');
+
+        function decreaseHealth() {
+            health -= 40;
+            healthBar.style.width = health + '%';
+
+            eyes.classList.add('eye-clicked');
+            setTimeout(function() {
+                eyes.classList.remove('eye-clicked');
+            }, 500);
+
+            blast.style.visibility = 'visible';
+            blast.style.animation = 'none'; 
+
+            // Clone the audio element and play the sound
+            var clone = magicSound.cloneNode();
+            clone.play();
+
+            setTimeout(function() {
+                blast.style.animation = '';
+            }, 10); 
+
+            setTimeout(function() {
+                blast.style.visibility = 'hidden';
+                blast.style.transform = 'none';
+            }, 500);
+
+            if (health <= 0) {
+                eyes.style.visibility = 'hidden';
+                attack.style.visibility = 'hidden';
+                explosion.style.visibility = 'visible';
+                explosion.style.animation = 'none';
+                explosion.offsetHeight;
+                explosion.style.animation = '';
+
+                var clone = blastSound.cloneNode();
+                clone.play();
+
+                setTimeout(function() {
+                    window.location.href = 'page-4.html';
+                }, 4000);
+            }
+        }
+        eyes.addEventListener('click', decreaseHealth);
+        attack.addEventListener('click', decreaseHealth);
+
+        setTimeout(function() {
+            healthBarContainer.style.width = '100%';
+        }, 2000);
+      </script>
+    </body>
+    <footer>
+</html>

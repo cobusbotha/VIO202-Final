@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Cobus Botha">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <title></title>
+    <style>
+        @keyframes grow {
+            from { 
+                transform: scale(1); 
+            }
+            to { 
+                transform: scale(35); 
+            }
+        }
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(359deg);
+            }
+        }   
+    </style>
+</head>
+<body id="page-1">
+    <h1 id="page-1-text">A mysterious portal, I wonder where that could lead?<h1>
+    <img id="stars" src="images/stars.png">
+    <a id="portal-link" href="page-2.html" onclick="delay(event)">
+        <img id="teleportation" src="images/teleportation.png">
+    </a>
+    <script>
+        function delay(event) {
+            event.preventDefault();
+            document.getElementById('teleportation').classList.add('animate');
+            // document.getElementById('portal-link').classList.add('animate-2');
+            setTimeout(function() {
+                window.location.href = "page-2.html";
+            }, 2000);
+        }
+    </script>
+</body>
+<footer>
+</footer>
+</html>

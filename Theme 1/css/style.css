@@ -1,0 +1,337 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+	font-family: 'Header-Font';
+	src: url("../fonts/Vinegar\ Stroke.ttf");
+}
+#page-2 {
+  background-color: #000000;
+  height: 100vh;
+  width: 100%;
+}
+#page-1 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#stars {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#page-1-text {
+  z-index: 3;
+  font-size: 3em;
+  color: white;
+  position: absolute;
+  top: 1%; /* Adjust as needed */
+  font-family: Header-Font;
+}
+
+#teleportation {
+  width: 80%;
+  height: 90%;
+  transition: all 0.6s linear;
+  z-index: 2;
+}
+
+#teleportation:hover {
+  transform: scale(1.1);
+}
+
+#portal-link {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#page-2 {
+  overflow: hidden;
+}
+#page-3 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+#page-5 {
+  background-color: grey;
+  display: grid;
+}
+.animate {
+  animation: grow 2s linear;
+}
+/* .animate-2 {
+  animation: rotation 2s linear infinite;
+} */
+#spiral {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  justify-self: center;
+}
+#page-3 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+#portal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: rotation 5s linear infinite;
+  z-index: 1;
+}
+
+#objects {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  animation: objects 5s infinite linear alternate;
+}
+
+#page-3 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+#portal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: rotation 2s linear infinite;
+  z-index: 1;
+}
+
+#objects {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  animation: objects 5s infinite linear alternate;
+}
+
+#thewand {
+  position: absolute;
+  width: 100%; /* adjust as needed */
+  height: 100%; /* adjust as needed */
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: wandrotation 5s infinite linear;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes wandrotation {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+#wand {
+  width: 100%;
+  height: 100%;
+  animation: objects 8s infinite linear alternate;
+}
+
+#page-2-text {
+  z-index: 3;
+  font-size: 3em;
+  color: white;
+  position: absolute;
+  top: 1%; /* Adjust as needed */
+  font-family: Header-Font;
+}
+
+#wand {
+  width: 100%;
+  height: 100%;
+  animation: objects 8s infinite linear alternate;
+}
+
+#page-2-text {
+  z-index: 3;
+  font-size: 3em;
+  color: white;
+  position: absolute;
+  top: 1%; /* Adjust as needed */
+  font-family: Header-Font;
+}
+#page-4 {
+  margin: 0;
+  padding: 0;
+  background-color: #535353;
+}
+#cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  animation: fadeIn 7s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+#page-5 {
+  overflow: hidden;
+  position: relative;
+  /* padding: 15px; */
+}
+
+#eyes {
+  width: 75%;
+  height: 75%;
+  margin-top: 100px;
+  position: absolute;
+  justify-self: center;
+  display: inline-block;
+  align-self: start;
+  z-index: 5;
+  animation: shrink-eye 3s linear;
+}
+.eye-clicked {
+  opacity: 0.8;
+}
+#attack {
+  z-index: 7; 
+  pointer-events: none;
+  position: absolute; 
+  animation: appear 3s linear;
+  top: -10px;
+}
+
+#healthBarContainer { 
+  width: 0; 
+  height: 30px;
+  border: 1px solid black; 
+  border-radius: 20px; 
+  overflow: hidden; 
+  background-color: #eee; 
+  transition: width 3s ease-in-out;
+  position: absolute; 
+  z-index: 8;
+} 
+#blast {
+  z-index: 6;
+  position: absolute;
+  visibility: hidden;
+  animation: blast 0.5s linear;
+}
+@keyframes blast {
+  0% { transform: scale(1); }
+  100% { transform: scale(0.5); }
+}
+#healthBar {
+  height: 100%;
+  background-color: #76ff03;
+  transition: width 0.3s ease-in-out;
+}
+
+#cave {
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+}
+#explosion {
+  z-index: 9;
+  position: absolute;
+  visibility: hidden;
+  animation: explosion-scale 4s ease-in-out;
+}
+@keyframes explosion-scale {
+  0% { transform: scale(0); }
+  100% { transform: scale(45); }
+}
+h1 {
+  justify-self: center;
+  align-self: center;
+  color: white;
+  font-size: 10em;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes objects {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes shrink-eye {
+  from {
+    transform: scale(3);
+    opacity: 0.3;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(50);
+  }
+}
