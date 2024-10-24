@@ -270,7 +270,20 @@
             background-color: #f1c40f;
             border-radius: 10px;
         }
+        /* Project Images */
+        .project-img {
+            width: 100%; 
+            max-width: 500px; /* Smaller, neater size */
+            height: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
 
+        .project-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -338,8 +351,8 @@
     <section id="projects" class="projects">
         <h2>Projects</h2>
         <div class="divider"></div>
-        <div class="project" id="vio">
-            <h3>Comic Project</h3>
+        <div class="project">
+            <h3 id="vio">Comic Project</h3>
             <p>
                 This was a Project for VIO202, which I am very proud of, it was mainly focused on typography and the emotions and story that words can convey if they are portrayed in specific ways. All drawings are hand-drawn by myself, as well as the layout and design of the comic. The audio is also recorded through me, and the animations are a combination of JavaScript and Adobe Animate.
             </p>
@@ -347,7 +360,7 @@
                 <img class="project-img" src="images/Theme-3.JPG" alt="Comic-Theme-3">
             </a>
         </div>
-        <div class="project" id="vio">
+        <div class="project">
             <h3>Storytelling Project</h3>
             <p>
                 This was also Project for VIO202, which focused on the storytelling of our comic through the use of gamification. The comic was turned into a "game" using, Photoshop, JavaScript, HTML and CSS. The game is fully responsive and has many animations and transitions to make it more visually appealing.
@@ -356,8 +369,8 @@
                 <img class="project-img" src="images/Theme-1.JPG" alt="Comic-Theme-1">
             </a>
         </div>
-        <div class="project" id="inter">
-            <h3>Interstellar Project</h3>
+        <div class="project">
+            <h3 id="inter">Interstellar Project</h3>
             <p>
                 This project was for my IMY class of first year, where we had to combine our CSS, HTML, and some JavaScript skills to create a website based on our favorite movie. I chose Interstellar, and I am very proud of the outcome. The website is fully responsive and has many animations and transitions to make it more visually appealing.
             </p>
@@ -365,8 +378,8 @@
                 <img class="project-img" src="images/Interstellar.JPG" alt="Interstellar-Page">
             </a>
         </div>
-        <div class="project" id="photo">
-            <h3>Photoshop Skills</h3>
+        <div class="project">
+            <h3 id="photo">Photoshop Skills</h3>
             <p>
                 This is a small collection of the Photoshop designs I have created over the years. I have a strong passion for design and I am always looking for new ways to improve my skills. I have a good understanding of the software and can create a wide range of designs, from simple logos to complex photo manipulations.
             </p>
