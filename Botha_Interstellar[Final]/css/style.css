@@ -1,0 +1,1807 @@
+/*Universal CSS*/
+@font-face {
+  font-family: "DidotLH-Bold";
+  src: url("../media/fonts/DidotLH-Bold.otf");
+}
+@font-face {
+  font-family: "QueensidesMedium";
+  src: url("../media/fonts/QueensidesMedium-x30zV.ttf");
+}
+html {
+  scroll-behavior: smooth;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: DidotLH-Bold;
+  letter-spacing: 0.15em;
+  color: hsl(30, 58%, 93%);
+  text-transform: uppercase;
+}
+h1 {
+  font-size: 3.5em;
+}
+h2 {
+  font-size: 3em;
+  text-decoration: underline double #ffdc5e;
+}
+h3 {
+  font-size: 2.5em;
+}
+h5 {
+  font-size: 2em;
+}
+p {
+  font-family: QueensidesMedium;
+  font-size: 1.5em;
+  color: hsl(30, 58%, 93%);
+}
+body {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-rows: auto 1fr auto;
+  background-image: url("../media/images/main-background.jpg");
+}
+header {
+  display: flex;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 200px 1fr;
+  flex-direction: column;
+  justify-content: center;
+  background-color: hsla(0, 0%, 0%, 0.95);
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 10px solid hsl(30, 58%, 93%);
+  border-style: ridge;
+}
+.interstellar {
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  grid-column: 1;
+}
+.main-navigation {
+  grid-column: 2;
+  display: flex;
+  flex: 1;
+}
+.main-unordered {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  list-style-type: none;
+  padding: 20px;
+}
+.main-links {
+  text-decoration: none;
+  font-family: QueensidesMedium;
+  font-size: 1.5em;
+  color: hsl(30, 58%, 93%);
+  padding: 20px;
+  transition: font-size 0.3s ease-out;
+}
+.main-links:hover {
+  color: #ffdc5e;
+  font-size: 1.7em;
+}
+footer {
+  margin: 20px;
+  text-align: center;
+}
+footer a {
+  text-decoration: none;
+  font-family: QueensidesMedium;
+  font-size: 1.5em;
+  color: hsl(30, 58%, 93%);
+  padding: 20px;
+  transition: font-size 0.3s ease-out;
+}
+footer a:hover {
+  color: #ffdc5e;
+  font-size: 1.7em;
+}
+/*Index CSS*/
+#index {
+  display: grid;
+  grid-template: repeat(6, auto) / repeat(2, auto);
+}
+#top-background {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  position: relative;
+  height: 100vh;
+  background-image: url(../media/images/top-background.jpg);
+  box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.8);
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 10px solid hsl(30, 58%, 93%);
+  border-style: ridge;
+}
+#top-background::before {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+}
+#interstellar-title {
+  position: absolute;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  width: 55%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  animation: appear 2s ease-in-out forwards;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#summary-title {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+  align-self: center;
+  justify-self: center;
+}
+#introduction {
+  height: 100%;
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  grid-template-rows: repeat(2, auto);
+  grid-row: 3;
+  grid-column: 1 / span 2;
+}
+#introduction-title {
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
+}
+#introduction-text {
+  align-self: center;
+  justify-self: center;
+  display: grid;
+}
+#introduction p {
+  align-self: center;
+  justify-self: center;
+  width: 80%;
+}
+#plot {
+  height: 100%;
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  grid-template: repeat(5, auto) / repeat(2, 1fr);
+  row-gap: 50px;
+  grid-row: 4;
+  grid-column: 1 / span 2;
+}
+em {
+  text-decoration: underline wavy #ffdc5e;
+}
+#plot-title {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  align-self: center;
+  justify-self: center;
+}
+#iframe {
+  align-self: center;
+  justify-self: center;
+  grid-row: 2;
+  grid-column: 1;
+  width: 90%;
+  height: 500px;
+  -webkit-transition: all 0.6s linear;
+  -moz-transition: all 0.6s linear;
+  -o-transition: all 0.6s linear;
+  transition: all 0.6s linear;
+  border-radius: 10px;
+}
+#iframe:hover,
+#iframe:active,
+#iframe:focus {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  transform: scale(1.05);
+}
+#storyOne {
+  grid-row: 2;
+  grid-column: 2;
+}
+#storyTwo {
+  grid-row: 3;
+  grid-column: 1 / span 2;
+}
+#joseph-cooper {
+  grid-row: 4;
+  grid-column: 2;
+}
+#storyThree {
+  grid-row: 4;
+  grid-column: 1;
+}
+#cooper-and-amelia {
+  grid-row: 5;
+  grid-column: 1;
+}
+#storyFour {
+  grid-row: 5;
+  grid-column: 2;
+}
+#more {
+  height: 100%;
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  grid-template: repeat(6, auto) / repeat(2, auto);
+  grid-row: 5;
+  grid-column: 1 / span 2;
+}
+#more-title {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#release-title {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+  align-self: center;
+  justify-self: center;
+}
+#cooper-on-planet {
+  grid-row: 3;
+  grid-column: 2;
+}
+#release {
+  grid-row: 3;
+  grid-column: 1;
+}
+#awards-title {
+  grid-row: 4;
+  grid-column: 1 / span 2;
+  align-self: center;
+  justify-self: center;
+}
+abbr {
+  text-decoration: none;
+}
+abbr:hover {
+  color: #ffdc5e;
+}
+#academy-table {
+  display: grid;
+  grid-row: 5;
+  grid-column: 1;
+  align-self: start;
+  justify-self: center;
+}
+#academy-table table {
+  align-self: center;
+  justify-self: center;
+}
+#bafta-table {
+  display: grid;
+  grid-row: 5;
+  grid-column: 2;
+  align-self: start;
+  justify-self: center;
+}
+#bafta-table table {
+  width: 100%;
+  height: 85%;
+  height: auto;
+  align-self: center;
+  justify-self: center;
+}
+#science-fiction-table {
+  display: grid;
+  grid-row: 6;
+  grid-column: 1 / span 2;
+  align-self: center;
+  justify-self: center;
+}
+#science-fiction-table table {
+  align-self: center;
+  justify-self: center;
+  width: 60%;
+}
+.tables {
+  width: 95%;
+  height: 80%;
+  border: 2px solid #f9f5eb;
+  border-collapse: collapse;
+  -webkit-transition: all 0.6s linear;
+  -moz-transition: all 0.6s linear;
+  -o-transition: all 0.6s linear;
+  transition: all 0.6s linear;
+}
+.tables:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  transform: scale(1.1);
+}
+caption {
+  text-transform: uppercase;
+  border: 2px solid #f9f5eb;
+  border-bottom: 0;
+  background-color: hsla(240, 2.2%, 18%, 0.48);
+  font-size: 140%;
+}
+tr {
+  background-color: hsla(240, 2.2%, 18%, 0.48);
+  margin: 10px;
+  text-align: center;
+  border: 2px solid #f9f5eb;
+}
+td {
+  border: 2px solid #f9f5eb;
+}
+td,
+caption {
+  color: #f9f5eb;
+  font-family: QueensidesMedium;
+}
+#academy-title,
+#bafta-title,
+#science-fiction-title {
+  text-align: center;
+}
+#influence {
+  height: 100%;
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  grid-template-rows: auto 1fr auto;
+  grid-row: 6;
+  grid-column: 1 / span 2;
+}
+#influence-title {
+  grid-row: 1;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+}
+#gargantua {
+  grid-row: 2;
+}
+#influence-text {
+  grid-row: 3;
+}
+.index-image {
+  height: 100%;
+  width: 90%;
+  align-self: center;
+  justify-self: center;
+  opacity: 0.9;
+}
+.index-text {
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  height: 100%;
+  width: 90%;
+}
+.holder {
+  align-self: center;
+  justify-self: center;
+}
+.index-paragraph {
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+}
+.paragraph-holder {
+  align-self: center;
+  justify-self: center;
+  display: grid;
+}
+/*Cast CSS*/
+#cast {
+  display: grid;
+  grid-template: repeat(8, auto) / repeat(2, 1fr);
+}
+#cast > h1 {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#matthew {
+  grid-row: 2;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+}
+#matthew > p {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#matthew-text {
+  grid-row: 2;
+  grid-column: 2;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+}
+#anne {
+  grid-row: 3;
+  grid-column: 2;
+  align-self: center;
+  justify-self: center;
+}
+#anne > p {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#anne-text {
+  grid-row: 3;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+}
+#jessica {
+  grid-row: 4;
+  grid-column: 2;
+  align-self: center;
+  justify-self: center;
+}
+#jessica > p {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#jessica-text {
+  grid-row: 4;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+}
+#mackenzie {
+  grid-row: 5;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+}
+#mackenzie > p {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#mackenzie-text {
+  grid-row: 6;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+}
+#timothee {
+  grid-row: 5;
+  grid-column: 2;
+  align-self: center;
+  justify-self: center;
+}
+#timothee > p {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#timothee-text {
+  grid-row: 6;
+  grid-column: 2;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+}
+#matt {
+  grid-row: 7;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+}
+#matt > p {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#matt-text {
+  grid-row: 7;
+  grid-column: 2;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+}
+#michael {
+  grid-row: 8;
+  grid-column: 2;
+  align-self: center;
+  justify-self: center;
+}
+#michael > p {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#michael-text {
+  grid-row: 8;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+}
+.cast-image {
+  width: 40%;
+  height: 10%;
+  border-radius: 50%;
+  border: 5px solid #272727;
+  border-style: double;
+}
+.celebinfo {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  width: 85%;
+}
+.character-link {
+  text-decoration: none;
+  font-family: QueensidesMedium;
+  font-size: 0.8em;
+  color: hsl(30, 58%, 93%);
+  transition: font-size 0.3s ease-out;
+}
+.character-link:hover {
+  color: #ffdc5e;
+  font-size: 1em;
+}
+/*Gallery CSS*/
+#gallery {
+  display: grid;
+  grid-template: repeat(7, auto) / repeat(3, auto);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+#movieshots {
+  grid-row: 1;
+  grid-column: 1 / span 3;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#one {
+  grid-row: 2;
+  grid-column: 3;
+}
+#two {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+}
+#three {
+  grid-row: 3;
+  grid-column: 1 / span 2;
+}
+#four {
+  grid-row: 3;
+  grid-column: 3;
+}
+.shots {
+  border-radius: 10px;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  height: 100%;
+}
+#fanart {
+  grid-row: 4;
+  grid-column: 1 / span 3;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#seven {
+  grid-row: 5;
+  grid-column: 1 / span 3;
+}
+#eight {
+  grid-row: 6 / span 7;
+  grid-column: 1;
+}
+#nine {
+  grid-row: 6;
+  grid-column: 2;
+}
+#ten {
+  grid-row: 6;
+  grid-column: 3;
+}
+#eleven {
+  grid-row: 7;
+  grid-column: 2;
+}
+#twelve {
+  grid-row: 7;
+  grid-column: 3;
+  width: auto;
+  height: 400px;
+}
+/*Music CSS*/
+#music {
+  display: grid;
+  grid-template: repeat(6, auto) / repeat(2, 1fr);
+}
+.song-cover {
+  border-radius: 50%;
+  width: 80%;
+  height: 100%;
+  align-self: center;
+  justify-self: center;
+  -moz-box-shadow: 0 0 100px #fff;
+  -webkit-box-shadow: 0 0 100px #fff;
+  box-shadow: 0px 0px 100px #fff;
+}
+#soundtrack-title {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+video {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+  align-self: center;
+  justify-self: center;
+  width: 60%;
+  height: 60%;
+}
+video[poster] {
+  height: 100%;
+}
+#song-one {
+  grid-row: 3;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#song-two {
+  grid-row: 3;
+  grid-column: 2;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#afraid-of-time {
+  grid-row: 4;
+  grid-column: 1;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+#cornfield-chase {
+  grid-row: 4;
+  grid-column: 2;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+#song-three {
+  grid-row: 5;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#song-four {
+  grid-row: 5;
+  grid-column: 2;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#no-time-for-caution {
+  grid-row: 6;
+  grid-column: 1;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+#the-wormhole {
+  grid-row: 6;
+  grid-column: 2;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+audio {
+  margin-top: 20px;
+  justify-self: center;
+  align-self: center;
+}
+.tag {
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+}
+.tag a {
+  text-decoration: none;
+  font-family: QueensidesMedium;
+  color: hsl(30, 58%, 93%);
+  padding: 20px;
+  font-size: 90%;
+  transition: font-size 0.3s ease-out;
+}
+.tag a:hover {
+  color: #ffdc5e;
+  font-size: 100%;
+}
+/*Review CSS*/
+#reviews {
+  display: grid;
+  grid-template: repeat(4, auto) / repeat(2, 1fr);
+}
+#reviewanne {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  height: 90%;
+  width: 90%;
+  align-self: center;
+  justify-self: center;
+}
+#rotten-holder {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+  display: grid;
+  grid-template: repeat(2, auto) / repeat(2, 1fr);
+  column-gap: 5%;
+  align-self: center;
+  justify-self: center;
+  align-content: center;
+  justify-content: center;
+}
+#rottentomatoes {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+}
+#rottentomatoes > a {
+  text-decoration: none;
+  color: hsl(30, 58%, 93%);
+  font-size: 1.5em;
+  transition: font-size 0.3s ease-out;
+}
+#rottentomatoes > a:hover {
+  color: #ffdc5e;
+  font-size: 1.7em;
+}
+#tomato-meter {
+  grid-row: 2;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+}
+#audience-meter {
+  grid-row: 2;
+  grid-column: 2;
+  align-self: center;
+  justify-self: center;
+}
+.tables-review {
+  height: 10%;
+  width: 100%;
+}
+#imdb-holder {
+  grid-row: 3;
+  grid-column: 1 / span 2;
+  display: grid;
+  grid-template: repeat(3, auto) / repeat(2, 1fr);
+  align-self: center;
+  justify-self: center;
+  align-content: center;
+  justify-content: center;
+}
+#imdb {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+}
+#imdb > a {
+  text-decoration: none;
+  color: hsl(30, 58%, 93%);
+  font-size: 1.5em;
+  transition: font-size 0.3s ease-out;
+}
+#imdb > a:hover {
+  color: #ffdc5e;
+  font-size: 1.7em;
+}
+#imdb-text-one {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 10px solid hsl(30, 58%, 93%);
+  border-style: ridge;
+}
+#imdb-text-two {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#smashcut-holder {
+  grid-row: 4;
+  grid-column: 1;
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  border-right: 5px solid #f9f5eb;
+}
+#smashcut {
+  grid-row: 1;
+  grid-column: 1;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+}
+#smashcut > a {
+  text-decoration: none;
+  color: hsl(30, 58%, 93%);
+  font-size: 1.5em;
+  transition: font-size 0.3s ease-out;
+}
+#smashcut > a:hover {
+  color: #ffdc5e;
+  font-size: 1.7em;
+}
+#smashcut-sub {
+  grid-row: 2;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+q {
+  grid-row: 3;
+  grid-column: 1;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  font-family: QueensidesMedium;
+  font-size: 1em;
+  color: hsl(30, 58%, 93%);
+}
+#smashreviews {
+  grid-row: 4;
+  grid-column: 1;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  padding: 1%;
+}
+#variety-holder {
+  grid-row: 4;
+  grid-column: 2;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+#variety {
+  grid-row: 1;
+  grid-column: 1;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+}
+#variety > a {
+  text-decoration: none;
+  color: hsl(30, 58%, 93%);
+  font-size: 1.5em;
+  transition: font-size 0.3s ease-out;
+}
+#variety > a:hover {
+  color: #ffdc5e;
+  font-size: 1.7em;
+}
+#variety-sub {
+  grid-row: 2;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#varietyreview {
+  grid-row: 3;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  padding: 1%;
+}
+.rating-link {
+  text-decoration: none;
+  font-family: QueensidesMedium;
+  font-size: 1.5em;
+  color: hsl(30, 58%, 93%);
+}
+.rating-link:hover {
+  color: #ffdc5e;
+}
+#review-author {
+  text-decoration: none;
+  font-family: QueensidesMedium;
+  font-size: 1em;
+  color: hsl(30, 58%, 93%);
+}
+#review-author:hover {
+  color: #ffdc5e;
+}
+/*Shop CSS*/
+#shop {
+  display: grid;
+  grid-template: repeat(8, auto) / repeat(2, 1fr);
+  align-content: center;
+  justify-content: center;
+  height: 100%;
+}
+#poster {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+}
+.product-card {
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  align-content: center;
+  justify-content: center;
+}
+#product-one {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+  height: 100%;
+}
+#product-two {
+  grid-column: 1;
+  grid-row: 3;
+  align-self: center;
+  justify-self: center;
+  height: 100%;
+}
+#product-three {
+  grid-column: 1;
+  grid-row: 4;
+  align-self: center;
+  justify-self: center;
+  height: 100%;
+}
+#video-and-sound {
+  grid-column: 2;
+  grid-row: 1;
+  height: 100%;
+  text-align: center;
+}
+#product-four {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+  height: 100%;
+}
+#product-five {
+  grid-column: 2;
+  grid-row: 3;
+  align-self: center;
+  justify-self: center;
+  height: 100%;
+}
+#product-six {
+  grid-column: 2;
+  grid-row: 4;
+  align-self: center;
+  justify-self: center;
+  height: 100%;
+}
+#toys {
+  grid-column: 1 / span 2;
+  grid-row: 5;
+  text-align: center;
+}
+#product-seven {
+  grid-column: 1 / span 2;
+  grid-row: 6;
+  align-self: center;
+  justify-self: center;
+  height: 100%;
+}
+#product-eight {
+  grid-column: 1 / span 2;
+  grid-row: 7;
+  align-self: center;
+  justify-self: center;
+  height: 100%;
+}
+#product-nine {
+  grid-column: 1 / span 2;
+  grid-row: 8;
+  align-self: center;
+  justify-self: center;
+  height: 100%;
+}
+.product-titles {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+.item {
+  align-self: center;
+  justify-self: center;
+  width: 450px;
+  height: 600px;
+}
+#vinyl {
+  width: 750px;
+}
+.last-three {
+  width: 450px;
+  height: 600px;
+  align-self: center;
+  justify-self: center;
+}
+.select {
+  align-self: center;
+  justify-self: center;
+}
+.price {
+  align-self: center;
+  justify-self: center;
+}
+p {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+#checkout-shop {
+  align-self: center;
+  justify-self: center;
+  width: 20%;
+}
+/*Checkout CSS*/
+#checkout {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+#formOne {
+  display: grid;
+  grid-column: 2;
+  grid-template-rows: repeat(6, auto);
+  height: 100%;
+  width: 100%;
+  justify-self: center;
+  border-radius: 20px;
+  background-image: url("../media/images/Checkout/checkout_background.png");
+}
+#contact {
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  color: #ffdc5e;
+}
+#personal {
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+}
+#checkout-ship {
+  grid-row: 3;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  color: #ffdc5e;
+}
+#shipping {
+  grid-row: 4;
+  align-self: center;
+  justify-self: center;
+}
+#card {
+  grid-row: 5;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  color: #ffdc5e;
+}
+#payment {
+  grid-row: 6;
+  align-self: center;
+  justify-self: center;
+}
+fieldset {
+  border: none;
+}
+legend {
+  font-weight: bold;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="email"],
+input[type="month"],
+input[type="password"],
+input[type="number"],
+select {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+#email {
+  font-size: 1.2em;
+  color: #ffdc5e;
+}
+input[type="submit"],
+input[type="reset"] {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f5eb;
+  color: black;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #ffdc5e;
+}
+#nameMessage,
+#surnameMessage,
+#emailMessage,
+#cardNumberMessage,
+#cvcMessage,
+#cardNameMessage,
+#submitMessage,
+#exparationMessage {
+  font-family: QueensidesMedium;
+  color: #ffdc5e;
+  font-size: 1em;
+}
+/*Result CSS*/
+section.shop {
+  text-align: center;
+}
+#description {
+  margin-left: auto;
+  margin-right: auto;
+}
+#resultpage {
+  text-align: center;
+}
+#purchase {
+  display: inline-block;
+  position: relative;
+  top: 20em;
+  margin: 0em auto 0em auto;
+  background-color: #f9f5eb;
+  font-weight: bolder;
+}
+#button {
+  display: grid;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+#button > a {
+  color: #f9f5eb;
+  text-align: center;
+  width: 200px;
+  height: 40px;
+  display: grid;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  text-decoration: none;
+  background-color: rgb(24, 24, 35);
+  border-radius: 20px;
+}
+#thank-you {
+  color: rgb(24, 24, 35);
+}
+#receive-message {
+  color: rgb(24, 24, 35);
+}
+@media screen and (max-width: 1200px) {
+  #plot {
+    grid-template: repeat(6, auto) / repeat(2, 1fr);
+    row-gap: 15px;
+  }
+  #iframe {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+    width: 90%;
+    height: 500px;
+  }
+  #storyOne {
+    grid-row: 3;
+    grid-column: 1 / span 2;
+    width: 100%;
+  }
+  #storyTwo {
+    grid-row: 4;
+    grid-column: 1 / span 2;
+  }
+  #joseph-cooper {
+    grid-row: 5;
+    grid-column: 2;
+    height: 75%;
+  }
+  #storyThree {
+    grid-row: 5;
+    grid-column: 1;
+  }
+  #cooper-and-amelia {
+    grid-row: 6;
+    grid-column: 1;
+    height: 85%;
+  }
+  #storyFour {
+    grid-row: 6;
+    grid-column: 2;
+  }
+  #more {
+    grid-template: repeat(7, auto) / repeat(2, auto);
+  }
+  #more-title {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+  }
+  #release-title {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+  }
+  #cooper-on-planet {
+    grid-row: 3;
+    grid-column: 2;
+    width: 95%;
+    height: 55%;
+  }
+  #release {
+    grid-row: 3;
+    grid-column: 1;
+    width: 80%;
+  }
+  #awards-title {
+    grid-row: 4;
+    grid-column: 1 / span 2;
+  }
+  #academy-table {
+    grid-row: 5;
+    grid-column: 1 / span 2;
+  }
+  #bafta-table {
+    grid-row: 6;
+    grid-column: 1 / span 2;
+  }
+  #science-fiction-table {
+    grid-row: 7;
+    grid-column: 1 / span 2;
+  }
+  #scienceOne,
+  #scienceTwo {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 1024px) {
+  header {
+    background-color: hsl(0, 0%, 0%);
+    grid-template-columns: 1fr;
+    position: fixed;
+    z-index: 1;
+    height: 110px;
+  }
+  .main-navigation {
+    grid-column: 1;
+  }
+  .main-links {
+    padding: 10px;
+    font-size: 2em;
+  }
+  .interstellar {
+    display: none;
+    visibility: hidden;
+  }
+  #index {
+    grid-template: repeat(5, auto) / repeat(2, auto);
+  }
+  #top-background {
+    display: none;
+    visibility: hidden;
+  }
+  #summary-title {
+    margin-top: 130px;
+    grid-row: 1;
+  }
+  #plot {
+    grid-template: repeat(8, auto) / repeat(2, 1fr);
+    row-gap: 10px;
+    grid-row: 2;
+  }
+  #joseph-cooper {
+    grid-row: 5;
+    grid-column: 1 / span 2;
+    height: 100%;
+  }
+  #storyThree {
+    grid-row: 6;
+    grid-column: 1 / span 2;
+  }
+  #cooper-and-amelia {
+    grid-row: 7;
+    grid-column: 1 / span 2;
+    height: 100%;
+  }
+  #storyFour {
+    grid-row: 8;
+    grid-column: 1 / span 2;
+  }
+  #more {
+    grid-template: repeat(8, auto) / repeat(2, auto);
+  }
+  #cooper-on-planet {
+    grid-row: 3;
+    grid-column: 1 / span 2;
+    height: 100%;
+  }
+  #release {
+    grid-row: 4;
+    grid-column: 1 / span 2;
+    width: 100%;
+  }
+  #awards-title {
+    grid-row: 5;
+    grid-column: 1 / span 2;
+    text-align: center;
+  }
+  #academy-table {
+    grid-row: 6;
+    grid-column: 1 / span 2;
+  }
+  #bafta-table {
+    grid-row: 7;
+    grid-column: 1 / span 2;
+  }
+  #science-fiction-table {
+    grid-row: 8;
+    grid-column: 1 / span 2;
+  }
+  .main-unordered {
+    padding: 0;
+  }
+  #scienceOne,
+  #scienceTwo {
+    width: 100%;
+  }
+  #cast {
+    display: grid;
+    grid-template: repeat(15, auto) / 1fr;
+  }
+  #cast > h1 {
+    margin-top: 130px;
+    grid-column: 1;
+  }
+  #matthew {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  #matthew-text {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  #anne {
+    grid-row: 4;
+    grid-column: 1;
+  }
+  #anne-text {
+    grid-row: 5;
+    grid-column: 1;
+  }
+  #jessica {
+    grid-row: 6;
+    grid-column: 1;
+  }
+  #jessica-text {
+    grid-row: 7;
+    grid-column: 1;
+  }
+  #mackenzie {
+    grid-row: 8;
+    grid-column: 1;
+  }
+  #mackenzie-text {
+    grid-row: 9;
+    grid-column: 1;
+  }
+  #timothee {
+    grid-row: 10;
+    grid-column: 1;
+  }
+  #timothee-text {
+    grid-row: 11;
+    grid-column: 1;
+  }
+  #matt {
+    grid-row: 12;
+    grid-column: 1;
+  }
+  #matt-text {
+    grid-row: 13;
+    grid-column: 1;
+  }
+  #michael {
+    grid-row: 14;
+    grid-column: 1;
+  }
+  #michael-text {
+    grid-row: 15;
+    grid-column: 1;
+  }
+  #gallery {
+    grid-template: repeat(8, auto) / repeat(2, 1fr);
+  }
+  #movieshots {
+    margin-top: 130px;
+    grid-row: 1;
+    grid-column: 1 / span 2;
+  }
+  #one {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  #two {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  #three {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  #four {
+    grid-row: 3;
+    grid-column: 2;
+  }
+  #fanart {
+    grid-row: 4;
+    grid-column: 1 / span 2;
+  }
+  #seven {
+    grid-row: 5;
+    grid-column: 1 / span 2;
+  }
+  #ten {
+    grid-row: 6;
+    grid-column: 1 / span 2;
+    height: 100%;
+  }
+  #eight {
+    grid-row: 7 / span 8;
+    grid-column: 1;
+  }
+  #nine {
+    grid-row: 7;
+    grid-column: 2;
+  }
+  #eleven {
+    grid-row: 8;
+    grid-column: 2;
+  }
+  #twelve {
+    display: none;
+    visibility: hidden;
+  }
+  #music {
+    display: grid;
+    grid-template: repeat(10, auto) / 1fr;
+  }
+  #soundtrack-title {
+    margin-top: 130px;
+    grid-row: 1;
+    grid-column: 1;
+  }
+  video {
+    grid-row: 2;
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .song-cover {
+    display: none;
+    visibility: hidden;
+  }
+  #song-one {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  #song-two {
+    grid-row: 5;
+    grid-column: 1;
+  }
+  #afraid-of-time {
+    grid-row: 4;
+    grid-column: 1;
+  }
+  #cornfield-chase {
+    grid-row: 6;
+    grid-column: 1;
+  }
+  #song-three {
+    grid-row: 7;
+    grid-column: 1;
+  }
+  #song-four {
+    grid-row: 9;
+    grid-column: 1;
+  }
+  #no-time-for-caution {
+    grid-row: 8;
+    grid-column: 1;
+  }
+  #the-wormhole {
+    grid-row: 10;
+    grid-column: 1;
+  }
+  #reviews {
+    display: grid;
+    grid-template: repeat(4, auto) / 1fr;
+  }
+  #reviewanne {
+    display: none;
+    visibility: hidden;
+  }
+  #rotten-holder {
+    grid-row: 1;
+    grid-column: 1;
+    grid-template: repeat(3, auto) / 1fr;
+    row-gap: 1%;
+  }
+  #rottentomatoes {
+    margin-top: 130px;
+    grid-row: 1;
+    grid-column: 1;
+  }
+  #tomato-meter {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  #audience-meter {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  #imdb-holder {
+    grid-row: 2;
+    grid-column: 1;
+    grid-template: repeat(3, auto) / 1fr;
+  }
+  #imdb {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  #imdb-text-one {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  #imdb-text-two {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  #smashcut-holder {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  #variety-holder {
+    grid-row: 4;
+    grid-column: 1;
+  }
+  #shop {
+    grid-template: repeat(8, auto) / 1fr;
+  }
+  #poster {
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 130px;
+  }
+  #product-one {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  #product-two {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  #product-three {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  #video-and-sound {
+    grid-column: 1;
+    grid-row: 5;
+  }
+  #product-four {
+    grid-column: 1;
+    grid-row: 6;
+  }
+  #product-five {
+    grid-column: 1;
+    grid-row: 7;
+  }
+  #product-six {
+    grid-column: 1;
+    grid-row: 8;
+  }
+  #toys {
+    grid-column: 1;
+    grid-row: 9;
+    text-align: center;
+  }
+  #product-seven {
+    grid-column: 1;
+    grid-row: 10;
+  }
+  #product-eight {
+    grid-column: 1;
+    grid-row: 11;
+  }
+  #product-nine {
+    grid-column: 1;
+    grid-row: 12;
+  }
+  #vinyl {
+    height: 95%;
+    width: 80%;
+  }
+  #formOne {
+    margin-top: 130px;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  #checkout {
+    grid-template-columns: 1fr;
+  }
+  #formOne {
+    grid-column: 1;
+  }
+}
+@media screen and (max-width: 505px) {
+  #release-title {
+    text-align: center;
+  }
+  header {
+    align-items: center;
+    height: 150px;
+  }
+  #summary-title {
+    margin-top: 170px;
+    grid-row: 1;
+  }
+  #cast > h1 {
+    margin-top: 170px;
+  }
+  #gallery {
+    grid-template: repeat(11, auto) / 1fr;
+  }
+  #movieshots {
+    margin-top: 170px;
+    grid-row: 1;
+    grid-column: 1;
+  }
+  #one {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  #two {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  #three {
+    grid-row: 4;
+    grid-column: 1;
+  }
+  #four {
+    grid-row: 5;
+    grid-column: 1;
+  }
+  #fanart {
+    grid-row: 6;
+    grid-column: 1;
+  }
+  #seven {
+    grid-row: 7;
+    grid-column: 1;
+  }
+  #eight {
+    grid-row: 8;
+    grid-column: 1;
+  }
+  #nine {
+    grid-row: 9;
+    grid-column: 1;
+  }
+  #ten {
+    grid-row: 10;
+    grid-column: 1;
+  }
+  #eleven {
+    grid-row: 11;
+    grid-column: 1;
+  }
+  #soundtrack-title {
+    margin-top: 170px;
+  }
+  #rottentomatoes {
+    margin-top: 170px;
+  }
+  #poster {
+    margin-top: 170px;
+  }
+}
